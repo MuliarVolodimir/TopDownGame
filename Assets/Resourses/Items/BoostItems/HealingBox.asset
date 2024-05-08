@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2bb5112b55e544ca2a55cc4293b5ab, type: 3}
+  m_Name: HealingBox
+  m_EditorClassIdentifier: 
+  Name: HealingBox
+  Type: 0
+  Index: healingbox
+  ItemPrefab: {fileID: 5126630052730352420, guid: 656dfca3baa7d734799dd6281abe8857, type: 3}
