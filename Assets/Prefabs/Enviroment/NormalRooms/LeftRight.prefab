@@ -165,7 +165,7 @@ MonoBehaviour:
   - {fileID: 1564270123405449808}
   - {fileID: 3138121012446643028}
   - {fileID: 8929919555330283087}
-  _enemyData: {fileID: 11400000, guid: ca35708e57d2545469a39048e46e4d45, type: 2}
+  _enemyData: {fileID: 11400000, guid: c741356c152a2564b822cbe56d4ef7ae, type: 2}
 --- !u!1 &6118007603716949500
 GameObject:
   m_ObjectHideFlags: 0

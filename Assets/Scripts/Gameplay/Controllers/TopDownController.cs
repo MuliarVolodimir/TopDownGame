@@ -12,7 +12,7 @@ public class TopDownController : MonoBehaviour
     private CharacterController _cc;
     private Quaternion _lastRotation = Quaternion.identity;
     
-    [SerializeField]  GameObject _curEquipItem;
+    [SerializeField] GameObject _curEquipItem;
     private PlayerAction _action;
     private PlayerInventory _inventory;
 
@@ -38,7 +38,10 @@ public class TopDownController : MonoBehaviour
             _inventory = GetComponent<PlayerInventory>();
             _inventory.OnInventoryAction += UpdateGraphics;
         }
-        _cc = GetComponent<CharacterController>();
+        if (_cc == null)
+        {
+            _cc = GetComponent<CharacterController>();
+        }
     }
 
     public void HandleInput(Vector3 movedir, bool isAiming, bool isSprinting)
@@ -56,6 +59,7 @@ public class TopDownController : MonoBehaviour
                 _lastRotation = Quaternion.LookRotation(movedir);
             }
         }
+
         transform.rotation = Quaternion.Slerp(transform.rotation, _lastRotation, _rotSpeed * Time.deltaTime);
 
         MovePlayer(movedir);
@@ -100,12 +104,12 @@ public class TopDownController : MonoBehaviour
     {
         if (_curEquipItem != null)
         {
-            IItem item = _curEquipItem.GetComponent<IItem>();
-            item.DoAction();
+            IItem iitem = _curEquipItem.GetComponent<IItem>();
+            iitem.DoAction();
         }
     }
 
-    private void UpdateGraphics(Item item, int ammoCount)
+    private void UpdateGraphics(Item item)
     {
         if (_curEquipItem != null)
         {

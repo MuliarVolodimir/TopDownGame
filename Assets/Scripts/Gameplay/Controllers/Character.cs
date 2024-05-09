@@ -1,15 +1,25 @@
 using UnityEngine;
+using VContainer;
 
 public class Character : MonoBehaviour, ICharacter
 {
-    [SerializeField] int _maxHealth;
+    [SerializeField] CharacterCharacteristics _characterCharacteristics;
+    [SerializeField] GameCharacter _gameCharacter;
 
     private int _health;
-
     private bool _damagable;
+
+    [Inject]
+    public void Construct(ApplicationData appData)
+    {
+        _gameCharacter = appData.SelectedCharacterInfo.GameCharacter;
+    }
+
     void Start()
     {
-        _health = _maxHealth;
+        _characterCharacteristics = _gameCharacter.CharacterCharacteristics;
+
+        _health = _characterCharacteristics.HealthPoint;
         _damagable = true;
     }
 
@@ -21,11 +31,13 @@ public class Character : MonoBehaviour, ICharacter
             CheckHealth();
         }   
     }
+
     public void TakeHealing(int healpoint)
     {
         _health += healpoint;
         CheckHealth();
     }
+
     private void CheckHealth()
     {
         if (_health <= 0)
@@ -34,9 +46,9 @@ public class Character : MonoBehaviour, ICharacter
             _damagable = false;
             Die();
         }
-        if (_health >= _maxHealth)
+        if (_health >= _characterCharacteristics.HealthPoint)
         {
-            _health = _maxHealth;
+            _health = _characterCharacteristics.HealthPoint;
         }
     }
 

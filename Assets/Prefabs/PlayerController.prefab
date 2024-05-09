@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 576314269232005535}
   - component: {fileID: 4943685442601669511}
   - component: {fileID: 7160622229414464247}
-  - component: {fileID: 1058769066036409626}
   - component: {fileID: -2413603475262747629}
+  - component: {fileID: 362710138424763207}
   m_Layer: 2
   m_Name: PlayerController
   m_TagString: Player
@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pickUpable: {fileID: 5074331088948919018, guid: ce0004b47ea90714dab7ae6757abeda0, type: 3}
-  _energyAmmoCount: 0
   _inventorySlotsCount: 2
   _currentSlot: 0
 --- !u!114 &4943685442601669511
@@ -130,19 +129,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _interactionRadius: 2
---- !u!114 &1058769066036409626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4300415507983508859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3dfa47fe29b894ab53f9634d72c8c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 100
 --- !u!114 &-2413603475262747629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +142,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterTransform: {fileID: 3434304707040213383}
+--- !u!114 &362710138424763207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300415507983508859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3dfa47fe29b894ab53f9634d72c8c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterCharacteristics:
+    HealthPoint: 0
+    Stamina: 0
+    EnergyAmmoCount: 0
+    Character: {fileID: 0}
 --- !u!1 &5519132052739210577
 GameObject:
   m_ObjectHideFlags: 0

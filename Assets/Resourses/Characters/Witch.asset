@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Witch
   m_EditorClassIdentifier: 
   CharacterName: Witch
+  CharacterCharacteristics:
+    HealthPoint: 5
+    Stamina: 30
   CharacterDescription: so mistery
   CharacterIndex: witch
   Rarity: 2

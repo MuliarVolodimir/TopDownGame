@@ -3,7 +3,6 @@ using System;
 public class Inventory 
 {
     private Item[] _items;
-    private int _energyAmmoCount;
 
     private int _currentSlot = 0;
 
@@ -11,7 +10,6 @@ public class Inventory
     public event Action<Item> OnItemRemoved;        // Remove // item, isUsed
     public event Action<Item> OnItemAdded;          // Add    // item
     public event Action<Item, Item> OnItemSwitched; // Switch // itemOld, itemNew,
-    public event Action<int> OnAmmoChanged;         // Ammo   // count;
 
     public void InitInventory(int slotsCount)
     {
@@ -65,23 +63,6 @@ public class Inventory
         _items[slotIndex] = null;
 
         OnItemRemoved?.Invoke(item);
-    }
-
-    public void AddAmmo(int ammoCount)
-    {
-        _energyAmmoCount += ammoCount;
-        OnAmmoChanged?.Invoke(_energyAmmoCount);
-    }
-
-    public void RemoveAmmo(int ammoCount)
-    {
-        _energyAmmoCount -= ammoCount;
-
-        if (_energyAmmoCount < 0)
-        {
-            ammoCount = 0;
-        }
-        OnAmmoChanged?.Invoke(_energyAmmoCount);
     }
 
     private void SwitchItem(int slotIndex, Item newItem)

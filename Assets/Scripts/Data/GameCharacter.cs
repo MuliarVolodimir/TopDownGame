@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class GameCharacter : ScriptableObject
 {
     public string CharacterName;
+
+    public CharacterCharacteristics CharacterCharacteristics;
+
     public string CharacterDescription;
     public string CharacterIndex;
 

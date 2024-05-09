@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f4baba2e96f4bc49bd717c83642d526, type: 3}
-  m_Name: EnemiesData
+  m_Name: TestBiomeEnemies
   m_EditorClassIdentifier: 
-  EasyEnemies:
+  Enemies:
   - {fileID: 6238192002046936378, guid: 1346774b95e6b144d97e9247cf61a4a4, type: 3}
-  MiddleEnemies: []
-  HardEnemies: []
   MiniBosses: []
   Bosses: []

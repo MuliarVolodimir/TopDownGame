@@ -5,14 +5,12 @@ public class CharacterGraphics : MonoBehaviour
 {
     [SerializeField] Transform _characterTransform;
 
-    private ApplicationData _applicationData;
     private GameCharacter _character;
 
     [Inject]
     public void Construct(ApplicationData appData)
     {
-        _applicationData = appData;
-        _character = _applicationData.SelectedCharacterInfo.GameCharacter;
+        _character = appData.SelectedCharacterInfo.GameCharacter;
     }
 
     private void Start()
