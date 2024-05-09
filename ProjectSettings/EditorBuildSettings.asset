@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterSelectScene.unity
     guid: 8c643cb0d752f324d8f296b9e47335bb
   - enabled: 1
-    path: Assets/Scenes/Testroom.unity
-    guid: 77309a0ea40b47d45b0e28c8739e654b
-  - enabled: 1
     path: Assets/Scenes/TestWorldGeneratorScene.unity
     guid: b334cb5089bf42344a27cfacb4aa30b4
   m_configObjects: {}

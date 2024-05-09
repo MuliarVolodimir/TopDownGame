@@ -5,7 +5,7 @@ using VContainer;
 
 public class CharacterSelector : MonoBehaviour
 {
-    private const int GAME_SCENE_INDEX = 4;
+    private const int GAME_SCENE_INDEX = 3;
 
     [SerializeField] CharacterIconInfoView _characterInfoPrefab;
     [SerializeField] GameObject _charactersContent;
