@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 
 [Serializable]
 public class CharacterCharacteristics
 {
     public int HealthPoint;
-    public int Stamina;
+    public float Speed;
 }

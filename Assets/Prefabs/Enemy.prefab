@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7806630262649472668}
   - component: {fileID: 7859817038413990495}
   - component: {fileID: 6301454092499075784}
-  - component: {fileID: 4565166555044296461}
+  - component: {fileID: 1538546625698267170}
   m_Layer: 0
   m_Name: EnemyMesh
   m_TagString: Untagged
@@ -108,7 +108,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4565166555044296461
+--- !u!114 &1538546625698267170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,14 +117,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1475575906204898008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3dfa47fe29b894ab53f9634d72c8c6, type: 3}
+  m_Script: {fileID: 11500000, guid: f7ef623774490d44cb9c2c253f3cee99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterCharacteristics:
-    HealthPoint: 20
-    Stamina: 0
-    EnergyAmmoCount: 0
-    Character: {fileID: 0}
+  _healthPoints: 20
+  Speed: 3
 --- !u!1 &6238192002046936378
 GameObject:
   m_ObjectHideFlags: 0

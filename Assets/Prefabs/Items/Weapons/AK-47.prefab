@@ -49,6 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attacks:
   - {fileID: 6189545653998721903}
+  _resources:
+  - Resource: {fileID: 11400000, guid: 250bd9ae893b2ee43a51f28493e68ac5, type: 2}
+    Count: 3
   _attackRate: 0.5
 --- !u!114 &6189545653998721903
 MonoBehaviour:

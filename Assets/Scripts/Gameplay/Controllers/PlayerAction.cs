@@ -33,8 +33,7 @@ public class PlayerAction : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             isSprinting = true;
-        }
-        
+        } 
 
         _tdController.HandleInput(moveDir, isAiming, isSprinting);
     }
@@ -44,14 +43,12 @@ public class PlayerAction : MonoBehaviour
         {
             _playerInventory.SwitchEquipItem(0);
             OnEquipItemSwitched?.Invoke(_playerInventory.EquipItem());
-            Debug.Log("pressed 1");
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             _playerInventory.SwitchEquipItem(1);
             OnEquipItemSwitched?.Invoke(_playerInventory.EquipItem());
-            Debug.Log("pressed 2");
         }
 
         if (Input.GetKeyDown(KeyCode.F))
@@ -62,13 +59,11 @@ public class PlayerAction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))
         {
             _playerInventory.RemoveItem();
-            Debug.Log("pressed G");
         }
 
         if (Input.GetKey(KeyCode.Mouse0))
         {
             _tdController.UseItem();
-            Debug.Log("pressed use");
         }
     }
 }

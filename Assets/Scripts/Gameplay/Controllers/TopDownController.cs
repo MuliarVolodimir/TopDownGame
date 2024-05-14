@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TopDownController : MonoBehaviour
 {
-    public float Speed;
+    [SerializeField] float _speed;
+    [SerializeField] int _stamina;
     [SerializeField] float _rotSpeed;
     [SerializeField] PlayerState _playerState;
 
@@ -15,6 +16,8 @@ public class TopDownController : MonoBehaviour
     [SerializeField] GameObject _curEquipItem;
     private PlayerAction _action;
     private PlayerInventory _inventory;
+    [SerializeField] private Character _character;
+    private SoohtController SoohtController = new SoohtController();
 
     private bool _isSprinting;
 
@@ -42,6 +45,11 @@ public class TopDownController : MonoBehaviour
         {
             _cc = GetComponent<CharacterController>();
         }
+        if (_character == null)
+        {
+            _character = GetComponent<Character>();
+        }
+
     }
 
     public void HandleInput(Vector3 movedir, bool isAiming, bool isSprinting)
@@ -90,11 +98,11 @@ public class TopDownController : MonoBehaviour
 
     private float CheckSpeed()
     {
-        float speed = Speed;
+        float speed = _speed;
 
         if (_isSprinting)
         {
-            speed = Speed * 1.75f;
+            speed = _speed * 1.75f;
         }
 
         return speed;
@@ -103,11 +111,26 @@ public class TopDownController : MonoBehaviour
     public void UseItem()
     {
         if (_curEquipItem != null)
-        {
-            IItem iitem = _curEquipItem.GetComponent<IItem>();
-            iitem.DoAction();
+        {   
+            Weapon weapon = _curEquipItem.GetComponent<Weapon>();
+            SoohtController.CheckShoot(_character, weapon);
         }
+        Reverse();
+
     }
+
+    public void Reverse()
+    {
+        int a = 74;
+        int b = 35;
+
+        Debug.Log($"a = {a}, b = {b}");
+
+        var c = (b, a);
+
+        Debug.Log($"reverse: a = {c.a}, b = {c.b}");
+    }
+    
 
     private void UpdateGraphics(Item item)
     {

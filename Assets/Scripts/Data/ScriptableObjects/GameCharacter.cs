@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class GameCharacter : ScriptableObject
     public string CharacterName;
 
     public CharacterCharacteristics CharacterCharacteristics;
+    public List<CharacterResource> CharacterResources;
 
     public string CharacterDescription;
     public string CharacterIndex;

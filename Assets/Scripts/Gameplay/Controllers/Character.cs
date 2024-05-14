@@ -1,10 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 using VContainer;
 
 public class Character : MonoBehaviour, ICharacter
 {
-    [SerializeField] CharacterCharacteristics _characterCharacteristics;
+    [SerializeField] CharacterCharacteristics _characterCharacteristics = new CharacterCharacteristics();
     [SerializeField] GameCharacter _gameCharacter;
+    [SerializeField] List<CharacterResource> _resources = new List<CharacterResource>();
 
     private int _health;
     private bool _damagable;
@@ -18,8 +20,13 @@ public class Character : MonoBehaviour, ICharacter
     void Start()
     {
         _characterCharacteristics = _gameCharacter.CharacterCharacteristics;
-
         _health = _characterCharacteristics.HealthPoint;
+
+        for (int i = 0; i < _gameCharacter.CharacterResources.Count; i++)
+        {
+            _resources.Add(_gameCharacter.CharacterResources[i]);
+        }
+
         _damagable = true;
     }
 
@@ -36,6 +43,11 @@ public class Character : MonoBehaviour, ICharacter
     {
         _health += healpoint;
         CheckHealth();
+    }
+
+    public List<CharacterResource> GetResources()
+    {
+        return (_resources);
     }
 
     private void CheckHealth()
