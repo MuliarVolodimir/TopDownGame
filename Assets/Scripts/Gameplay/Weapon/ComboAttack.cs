@@ -10,7 +10,7 @@ public class ComboAttack : MonoBehaviour
 
     private void Start()
     {
-        _weapon.DoAttack += _weapon_DoAttack;
+        _weapon.OnAttack += _weapon_DoAttack;
     }
 
     private void _weapon_DoAttack()

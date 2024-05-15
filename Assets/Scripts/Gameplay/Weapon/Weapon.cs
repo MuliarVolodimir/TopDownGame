@@ -1,16 +1,16 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : Item
 {
-    [SerializeField] List<Attack> _attacks;
     [SerializeField] List<CharacterResource> _resources;
     [SerializeField] float _attackRate;
+    [SerializeField] AttackType _attackType;
 
-    public event Action DoAttack;
     private float _nextFire;
-    public bool CanAttack;
+    public event Action OnAttack;
 
     public override void DoAction(PlayerCharacter playerCharacter)
     {
@@ -18,13 +18,18 @@ public class Weapon : Item
         {
             _nextFire = Time.time + _attackRate;
 
-            for (int i = 0; i < _attacks.Count; i++)
+            if (_resources.Count > 0 && _resources != null)
             {
                 if (playerCharacter.RemoveResources(_resources))
                 {
-                    _attacks[i].DoAttack();
-                    DoAttack?.Invoke();
+                    _attackType.DoAttackType();
+                    OnAttack?.Invoke();
                 }
+            }  
+            else
+            {
+                _attackType.DoAttackType();
+                OnAttack?.Invoke();
             }
         }
     }

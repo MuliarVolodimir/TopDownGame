@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8469042602772144782}
   - component: {fileID: 7725686691399856186}
+  - component: {fileID: 7297186589564955893}
   - component: {fileID: 1921069834248089924}
   m_Layer: 0
   m_Name: Beretta
@@ -47,12 +48,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a20aca87e113747b520a7d498c2c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attacks:
-  - {fileID: 1921069834248089924}
   _resources:
   - Resource: {fileID: 11400000, guid: 250bd9ae893b2ee43a51f28493e68ac5, type: 2}
     Count: 3
   _attackRate: 0.4
+  _attackType: {fileID: 7297186589564955893}
+--- !u!114 &7297186589564955893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4929567279156612094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf5974e056b01449aa1f1617e684ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attacks:
+  - {fileID: 1921069834248089924}
 --- !u!114 &1921069834248089924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,8 +83,6 @@ MonoBehaviour:
   _bulletSpeed: 18
   _angleRot: 30
   _bulletCount: 3
-  _shootBurst: 0
-  _burstCount: 0
   _bulletPrefab: {fileID: 2517462985165896740, guid: 503c7591b2ca97846b33ea8355ab9957, type: 3}
   _bulletSpawnerPos: {fileID: 8655360219741009269}
 --- !u!1 &6611069467970029333

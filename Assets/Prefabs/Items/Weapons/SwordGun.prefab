@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4313174528211954211}
   - component: {fileID: 9103537967010988660}
+  - component: {fileID: 1629708779120044818}
   - component: {fileID: 6618860833931360462}
   - component: {fileID: 5085667121006600154}
   - component: {fileID: 3919651385553239379}
@@ -81,12 +82,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a20aca87e113747b520a7d498c2c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _resources: []
+  _attackRate: 0.5
+  _attackType: {fileID: 1629708779120044818}
+--- !u!114 &1629708779120044818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017279805053785817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf5974e056b01449aa1f1617e684ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _attacks:
   - {fileID: 5085667121006600154}
-  _resources:
-  - Resource: {fileID: 11400000, guid: bdcf441e3e857e049b8fecf87344b055, type: 2}
-    Count: 2
-  _attackRate: 0.5
 --- !u!114 &6618860833931360462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,8 +148,6 @@ MonoBehaviour:
   _bulletSpeed: 18
   _angleRot: 0
   _bulletCount: 1
-  _shootBurst: 0
-  _burstCount: 0
   _bulletPrefab: {fileID: 2517462985165896740, guid: 503c7591b2ca97846b33ea8355ab9957, type: 3}
   _bulletSpawnerPos: {fileID: 2995168168945492687}
 --- !u!1 &6494181361831754766

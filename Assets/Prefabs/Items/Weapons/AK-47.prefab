@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3221973662271997658}
   - component: {fileID: 9049585762578251116}
+  - component: {fileID: -7344891899166733843}
   - component: {fileID: 6189545653998721903}
   m_Layer: 0
   m_Name: AK-47
@@ -47,12 +48,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a20aca87e113747b520a7d498c2c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attacks:
-  - {fileID: 6189545653998721903}
   _resources:
   - Resource: {fileID: 11400000, guid: 250bd9ae893b2ee43a51f28493e68ac5, type: 2}
     Count: 3
   _attackRate: 0.5
+  _attackType: {fileID: -7344891899166733843}
+--- !u!114 &-7344891899166733843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616460341444205446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b4a3096ee61ee4b8ab08568550d72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attacks:
+  - {fileID: 6189545653998721903}
+  _burstCount: 3
+  _burstRate: 0.1
 --- !u!114 &6189545653998721903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,8 +85,6 @@ MonoBehaviour:
   _bulletSpeed: 18
   _angleRot: 0
   _bulletCount: 1
-  _shootBurst: 1
-  _burstCount: 3
   _bulletPrefab: {fileID: 2517462985165896740, guid: 503c7591b2ca97846b33ea8355ab9957, type: 3}
   _bulletSpawnerPos: {fileID: 8477229500974923104}
 --- !u!1 &5166223502315458172
