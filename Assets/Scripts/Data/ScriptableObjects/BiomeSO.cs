@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Biome", menuName = "ScriptableObjects/Enviroment")]
-public class Biome : ScriptableObject
+public class BiomeSO : ScriptableObject
 {
     public string Name;
     public string Index;

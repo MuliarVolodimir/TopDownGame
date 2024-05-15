@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class PickUpable : MonoBehaviour, IInteractable
 {
-    [SerializeField] Item _item;
+    [SerializeField] ItemSO _item;
     [SerializeField] TextMeshPro _infoText;
     [SerializeField] Transform _itemSpawnPos;
     private Camera _camMain;
 
-    public void SetItem(Item item)
+    public void SetItem(ItemSO item)
     {
         _item = item;
     }

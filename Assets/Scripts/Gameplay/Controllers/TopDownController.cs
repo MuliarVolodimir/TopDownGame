@@ -1,25 +1,28 @@
 using UnityEngine;
+using VContainer;
 
 [RequireComponent(typeof(CharacterController))]
 
 public class TopDownController : MonoBehaviour
 {
     [SerializeField] float _speed;
-    [SerializeField] int _stamina;
     [SerializeField] float _rotSpeed;
     [SerializeField] PlayerState _playerState;
-
+    
     [SerializeField] Transform _armTransform;
+
     private CharacterController _cc;
     private Quaternion _lastRotation = Quaternion.identity;
     
-    [SerializeField] GameObject _curEquipItem;
+    private Item _curEquipItem;
+    private GameObject _curItemObj;
     private PlayerAction _action;
     private PlayerInventory _inventory;
-    [SerializeField] private Character _character;
-    private SoohtController SoohtController = new SoohtController();
+    private PlayerCharacter _character;
+    private CharacterGraphics _characterGraphics;
 
     private bool _isSprinting;
+    
 
     public enum PlayerState
     {
@@ -28,6 +31,12 @@ public class TopDownController : MonoBehaviour
         Atack,
         UseSuper,
         Idle
+    }
+
+    [Inject]
+    public void Construct(ApplicationData appData)
+    {
+        _speed = appData.SelectedCharacterInfo.GameCharacter.CharacterCharacteristics.Speed;
     }
 
     private void Start()
@@ -39,7 +48,7 @@ public class TopDownController : MonoBehaviour
         if (_inventory == null)
         {
             _inventory = GetComponent<PlayerInventory>();
-            _inventory.OnInventoryAction += UpdateGraphics;
+            _inventory.OnInventoryAction += _inventory_OnInventoryAction;
         }
         if (_cc == null)
         {
@@ -47,9 +56,12 @@ public class TopDownController : MonoBehaviour
         }
         if (_character == null)
         {
-            _character = GetComponent<Character>();
+            _character = GetComponent<PlayerCharacter>();
         }
-
+        if (_characterGraphics == null)
+        {
+            _characterGraphics = GetComponent<CharacterGraphics>();
+        }
     }
 
     public void HandleInput(Vector3 movedir, bool isAiming, bool isSprinting)
@@ -111,37 +123,22 @@ public class TopDownController : MonoBehaviour
     public void UseItem()
     {
         if (_curEquipItem != null)
-        {   
-            Weapon weapon = _curEquipItem.GetComponent<Weapon>();
-            SoohtController.CheckShoot(_character, weapon);
-        }
-        Reverse();
-
-    }
-
-    public void Reverse()
-    {
-        int a = 74;
-        int b = 35;
-
-        Debug.Log($"a = {a}, b = {b}");
-
-        var c = (b, a);
-
-        Debug.Log($"reverse: a = {c.a}, b = {c.b}");
-    }
-    
-
-    private void UpdateGraphics(Item item)
-    {
-        if (_curEquipItem != null)
         {
-            Destroy(_curEquipItem);
+            _curEquipItem.DoAction(_character);
+        }
+    }
+
+    private void _inventory_OnInventoryAction(ItemSO item)
+    {
+        if (_curItemObj != null)
+        {
+            Destroy(_curItemObj);
         }
         if (item != null)
         {
-            _curEquipItem = Instantiate(item.ItemPrefab, _armTransform.transform);
-            Debug.Log("graphics updated, cur item: " + item.Name);
-        }     
+            _curItemObj = Instantiate(item.ItemPrefab, _armTransform.transform);
+            _curEquipItem = _curItemObj.GetComponent<Item>();
+            Debug.Log("graphics updated, cur item: " + _curItemObj.name);
+        }
     }
 }

@@ -1,8 +1,8 @@
 public class CharacterIconInfoDataObject
 {
-    public readonly GameCharacter Character;
+    public readonly GameCharacterSO Character;
 
-    public CharacterIconInfoDataObject(GameCharacter character)
+    public CharacterIconInfoDataObject(GameCharacterSO character)
     {
         Character = character;
     }

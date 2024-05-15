@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] List<Transform> _spawnPoints;
-    [SerializeField] BiomeEnemies _enemyData;
+    [SerializeField] BiomeEnemiesSO _enemyData;
 
     private void Start()
     {

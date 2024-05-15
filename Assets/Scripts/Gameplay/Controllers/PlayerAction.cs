@@ -7,7 +7,7 @@ public class PlayerAction : MonoBehaviour
     [SerializeField] PlayerInventory _playerInventory;
     [SerializeField] InteractSystem _interactSystem;
 
-    public event Action<Item> OnEquipItemSwitched; 
+    public event Action<ItemSO> OnEquipItemSwitched; 
 
     void Update()
     {

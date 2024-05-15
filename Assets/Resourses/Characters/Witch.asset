@@ -14,13 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterName: Witch
   CharacterCharacteristics:
-    HealthPoint: 5
+    HealthPoint: 8
     Speed: 4.5
   CharacterResources:
-  - Resource: {fileID: 11400000, guid: bdcf441e3e857e049b8fecf87344b055, type: 2}
-    Count: 90
   - Resource: {fileID: 11400000, guid: 250bd9ae893b2ee43a51f28493e68ac5, type: 2}
-    Count: 10
+    Count: 90
   CharacterDescription: so mistery
   CharacterIndex: witch
   Rarity: 2

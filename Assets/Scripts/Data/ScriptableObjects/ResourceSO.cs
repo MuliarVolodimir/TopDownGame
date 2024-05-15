@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "GameCharacter", menuName = "ScriptableObjects/CharacterRecource")]
-public class Resource : ScriptableObject
+public class ResourceSO : ScriptableObject
 {
     public string Name;
     public string index;

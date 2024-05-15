@@ -9,7 +9,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] GameObject _mapPrefab;
 
     [Header("Biomes")]
-    [SerializeField] Biome _biome;
+    [SerializeField] BiomeSO _biome;
 
     private List<Room> _createdRooms;
 
@@ -26,10 +26,10 @@ public class MapGenerator : MonoBehaviour
         _biome = FindBiome(biomesData);
     }
 
-    private Biome FindBiome(BiomesData biomesData)
+    private BiomeSO FindBiome(BiomesData biomesData)
     {
         var biomes = biomesData.GetBiomes();
-        var biome = new Biome();
+        var biome = new BiomeSO();
 
         if (_appData.MapData.BiomeIndex != null)
         {

@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class CharacterToSelectData : MonoBehaviour
 {
-    [SerializeField] List<GameCharacter> _gameCharacters;
+    [SerializeField] List<GameCharacterSO> _gameCharacters;
 
-    public List<GameCharacter> GetCharacters()
+    public List<GameCharacterSO> GetCharacters()
     {
         return _gameCharacters;
     }

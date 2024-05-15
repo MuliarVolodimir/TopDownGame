@@ -36,11 +36,11 @@ public class InteractSystem : MonoBehaviour
         {
             _lastInteractGameObject = null;
             
-            IInteractable item = colliders[0].gameObject.GetComponent<IInteractable>();
+            IInteractable interactable = colliders[0].gameObject.GetComponent<IInteractable>();
             
-            if (item != null)
+            if (interactable != null)
             {
-                item.Interact(gameObject);
+                interactable.Interact(gameObject);
             }
 
             Debug.Log(colliders[0].gameObject.name);

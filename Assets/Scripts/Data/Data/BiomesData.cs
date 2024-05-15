@@ -4,9 +4,9 @@ using UnityEngine;
 public class BiomesData : MonoBehaviour
 {
     [Header("Biomes")]
-    [SerializeField] List<Biome> _biomes;
+    [SerializeField] List<BiomeSO> _biomes;
 
-    public List<Biome> GetBiomes()
+    public List<BiomeSO> GetBiomes()
     {
         return _biomes;
     }

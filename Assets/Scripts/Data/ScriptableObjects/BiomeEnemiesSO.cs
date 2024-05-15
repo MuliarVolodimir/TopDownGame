@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyData", menuName = "ScriptableObjects/BiomeEnemies")]
-public class BiomeEnemies : ScriptableObject
+public class BiomeEnemiesSO : ScriptableObject
 {
     public List<GameObject> Enemies;
 

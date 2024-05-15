@@ -10,7 +10,7 @@ public class ApplicationController : LifetimeScope
     [SerializeField] CharacterToSelectData _characterToSelectData;
     [SerializeField] BiomesData _biomesData;
 
-    [SerializeField] ItemsData _itemsData;
+    [SerializeField] ItemsDataSO _itemsData;
 
     private ApplicationData _applicationData; 
     private ApplicationDataSaver _applicationDataSaver = new ApplicationDataSaver();
@@ -34,9 +34,9 @@ public class ApplicationController : LifetimeScope
         SceneManager.LoadScene(1);
     }
 
-    private GameCharacter GetCharacterPrefab(CharacterToSelectData characterToSelectData)
+    private GameCharacterSO GetCharacterPrefab(CharacterToSelectData characterToSelectData)
     {
-        List<GameCharacter> characters = characterToSelectData.GetCharacters();
+        List<GameCharacterSO> characters = characterToSelectData.GetCharacters();
 
         for (int i = 0; i < characters.Count; i++)
         {

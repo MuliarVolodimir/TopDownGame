@@ -9,7 +9,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] int _inventorySlotsCount;
     [SerializeField] int _currentSlot;
 
-    public event Action<Item> OnInventoryAction; // item
+    public event Action<ItemSO> OnInventoryAction; // item
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class PlayerInventory : MonoBehaviour
     }
 
 
-    private void _inventory_OnItemSwitched(Item oldItem, Item newItem)
+    private void _inventory_OnItemSwitched(ItemSO oldItem, ItemSO newItem)
     {
         GameObject gm = Instantiate(_pickUpable, transform.position, transform.rotation);
         gm.GetComponent<PickUpable>().SetItem(oldItem);
@@ -28,7 +28,7 @@ public class PlayerInventory : MonoBehaviour
         OnInventoryAction?.Invoke(newItem);
     }
 
-    private void _inventory_OnItemRemoved(Item item)
+    private void _inventory_OnItemRemoved(ItemSO item)
     {
         GameObject gm = Instantiate(_pickUpable, transform.position, transform.rotation);
         gm.GetComponent<PickUpable>().SetItem(item);
@@ -36,17 +36,17 @@ public class PlayerInventory : MonoBehaviour
         OnInventoryAction?.Invoke(null);
     }
 
-    private void _inventory_OnItemAdded(Item item)
+    private void _inventory_OnItemAdded(ItemSO item)
     {
         OnInventoryAction?.Invoke(item);
     }
 
-    public Item EquipItem()
+    public ItemSO EquipItem()
     {
         return _inventory.GetItem(_currentSlot);
     }
     
-    public void AddItem(Item item)
+    public void AddItem(ItemSO item)
     {
         _inventory.AddItem(item);
     }

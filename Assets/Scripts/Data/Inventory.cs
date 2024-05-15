@@ -2,18 +2,18 @@ using System;
 
 public class Inventory 
 {
-    private Item[] _items;
+    private ItemSO[] _items;
 
     private int _currentSlot = 0;
 
     //Actions :)
-    public event Action<Item> OnItemRemoved;        // Remove // item, isUsed
-    public event Action<Item> OnItemAdded;          // Add    // item
-    public event Action<Item, Item> OnItemSwitched; // Switch // itemOld, itemNew,
+    public event Action<ItemSO> OnItemRemoved;        // Remove // item, isUsed
+    public event Action<ItemSO> OnItemAdded;          // Add    // item
+    public event Action<ItemSO, ItemSO> OnItemSwitched; // Switch // itemOld, itemNew,
 
     public void InitInventory(int slotsCount)
     {
-        _items = new Item[slotsCount];
+        _items = new ItemSO[slotsCount];
 
         for (int i = 0; i < _items.Length; i++)
         {
@@ -21,7 +21,7 @@ public class Inventory
         }
     }
 
-    public void AddItem(Item item)
+    public void AddItem(ItemSO item)
     {
         int freeSlot = FindingFreeSlot();
 
@@ -52,7 +52,7 @@ public class Inventory
         return -1;
     }
 
-    public Item GetItem(int slotIndex)
+    public ItemSO GetItem(int slotIndex)
     {
         return _items[slotIndex] != null ? _items[slotIndex] : null;
     }
@@ -65,7 +65,7 @@ public class Inventory
         OnItemRemoved?.Invoke(item);
     }
 
-    private void SwitchItem(int slotIndex, Item newItem)
+    private void SwitchItem(int slotIndex, ItemSO newItem)
     {
         var oldItem = _items[slotIndex];
         _items[slotIndex] = newItem;

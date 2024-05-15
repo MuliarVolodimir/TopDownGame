@@ -17,10 +17,8 @@ MonoBehaviour:
     HealthPoint: 10
     Speed: 4.7
   CharacterResources:
-  - Resource: {fileID: 11400000, guid: bdcf441e3e857e049b8fecf87344b055, type: 2}
-    Count: 100
   - Resource: {fileID: 11400000, guid: 250bd9ae893b2ee43a51f28493e68ac5, type: 2}
-    Count: 20
+    Count: 100
   CharacterDescription: thisis a startale character
   CharacterIndex: startablecharacter
   Rarity: 0

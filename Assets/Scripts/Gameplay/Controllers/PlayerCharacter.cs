@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using VContainer;
 
-public class Character : MonoBehaviour, ICharacter
+public class PlayerCharacter : MonoBehaviour, ICharacter
 {
     [SerializeField] CharacterCharacteristics _characterCharacteristics = new CharacterCharacteristics();
-    [SerializeField] GameCharacter _gameCharacter;
+    [SerializeField] GameCharacterSO _gameCharacter;
     [SerializeField] List<CharacterResource> _resources = new List<CharacterResource>();
 
     private int _health;
@@ -45,9 +45,36 @@ public class Character : MonoBehaviour, ICharacter
         CheckHealth();
     }
 
-    public List<CharacterResource> GetResources()
+    public void AddResources(CharacterResource characterResource)
     {
-        return (_resources);
+        for (int i = 0; i < _resources.Count; i++)
+        {
+            if (_resources[i].Resource == characterResource.Resource && _resources[i].Resource._canBeOverwritten)
+            {
+                _resources[i].Count += characterResource.Count;
+            }
+        }
+    }
+
+    public bool RemoveResources(List<CharacterResource> resources)
+    {
+        var availableResources = new List<CharacterResource>(_resources);
+
+        foreach (var requiredResource in resources)
+        {
+            var availableResource = availableResources.Find(r => r.Resource == requiredResource.Resource);
+
+            if (availableResource == null || availableResource.Count < requiredResource.Count)
+            {
+                return false;
+            }
+
+            availableResource.Count -= requiredResource.Count;
+        }
+
+        _resources = availableResources;
+
+        return true;
     }
 
     private void CheckHealth()
@@ -73,5 +100,5 @@ public class Character : MonoBehaviour, ICharacter
         dead.GetComponent<CapsuleCollider>().enabled = false;
 
         Destroy(gameObject);
-    }
+    } 
 }

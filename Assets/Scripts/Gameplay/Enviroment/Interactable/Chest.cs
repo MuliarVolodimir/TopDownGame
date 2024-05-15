@@ -8,15 +8,15 @@ public class Chest : MonoBehaviour, IInteractable
     [SerializeField] GameObject _pickUpable;
     [SerializeField] Transform _itemSpawnPos;
     [SerializeField] TextMeshPro _infoText;
-    [SerializeField] ItemsData _items;
+    [SerializeField] ItemsDataSO _items;
 
-    private Item _currItem;
+    private ItemSO _currItem;
     private Camera _camMain;
 
     private bool _isInteractable;
 
     [Inject]
-    public void Construct(ItemsData itemsToSelectData) 
+    public void Construct(ItemsDataSO itemsToSelectData) 
     {
         _items = itemsToSelectData;
     }
@@ -32,7 +32,7 @@ public class Chest : MonoBehaviour, IInteractable
     private void InitCurrentItem()
     {
         var items = _items.Weapons;
-        var query = items.Where(item => item.Rarity == Item.ItemRarity.Legendary).ToList();
+        var query = items.Where(item => item.Rarity == ItemSO.ItemRarity.Legendary).ToList();
 
         int index = Random.Range(0, query.Count - 1);
 

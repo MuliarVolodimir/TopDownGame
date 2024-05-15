@@ -3,8 +3,8 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "ItemsData",menuName = "ScriptableObjects/ItemsDataBase")]
 
-public class ItemsData : ScriptableObject
+public class ItemsDataSO : ScriptableObject
 {
-    public List<Item> Weapons;
-    public List<Item> BoostItems;
+    public List<ItemSO> Weapons;
+    public List<ItemSO> BoostItems;
 }

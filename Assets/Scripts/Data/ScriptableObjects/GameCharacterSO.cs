@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "GameCharacter", menuName = "ScriptableObjects/GameCharacter")]
-public class GameCharacter : ScriptableObject
+public class GameCharacterSO : ScriptableObject
 {
     public string CharacterName;
 

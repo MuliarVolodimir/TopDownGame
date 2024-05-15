@@ -5,8 +5,8 @@
         "VContainer",
         "Infrastrucure",
         "Unity.TextMeshPro",
-        "Inventory",
-        "Data"
+        "Data",
+        "Inventory"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

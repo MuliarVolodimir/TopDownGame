@@ -23,7 +23,7 @@ public class CharacterSelector : MonoBehaviour
 
     private void InitializeCharacterIcons()
     {
-        List<GameCharacter> characters = _characterToSelectData.GetCharacters();
+        List<GameCharacterSO> characters = _characterToSelectData.GetCharacters();
 
         Debug.Log(characters.Count);
         for (int i = 0; i < characters.Count; i++)
@@ -43,7 +43,7 @@ public class CharacterSelector : MonoBehaviour
         }
     }
 
-    private void NewCharacterIcon_OnIconClick(GameCharacter gameCharacter)
+    private void NewCharacterIcon_OnIconClick(GameCharacterSO gameCharacter)
     {
         if (_applicationData.SelectedCharacterInfo == null)
         {

@@ -3,6 +3,6 @@ using System;
 [Serializable]
 public class CharacterResource
 {
-    public Resource Resource;
+    public ResourceSO Resource;
     public int Count;
 }

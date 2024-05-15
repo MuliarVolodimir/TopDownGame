@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 576314269232005535}
   - component: {fileID: 4943685442601669511}
   - component: {fileID: 7160622229414464247}
-  - component: {fileID: -2413603475262747629}
   - component: {fileID: 362710138424763207}
+  - component: {fileID: -2413603475262747629}
   m_Layer: 2
   m_Name: PlayerController
   m_TagString: Player
@@ -78,11 +78,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92985b58d23a8724790d7b9dbb8e9275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 4.5
+  _speed: 0
   _rotSpeed: 10
   _playerState: 0
   _armTransform: {fileID: 89898934759572481}
-  _curEquipItem: {fileID: 0}
 --- !u!114 &576314269232005535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,19 +128,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _interactionRadius: 2
---- !u!114 &-2413603475262747629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4300415507983508859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f884eda1fe88c24d9976e821e639756, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterTransform: {fileID: 3434304707040213383}
 --- !u!114 &362710138424763207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,9 +142,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterCharacteristics:
     HealthPoint: 0
-    Stamina: 0
-    EnergyAmmoCount: 0
-    Character: {fileID: 0}
+    Speed: 0
+  _gameCharacter: {fileID: 0}
+  _resources: []
+--- !u!114 &-2413603475262747629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300415507983508859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f884eda1fe88c24d9976e821e639756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterTransform: {fileID: 3434304707040213383}
+  _playerInventory: {fileID: 576314269232005535}
 --- !u!1 &5519132052739210577
 GameObject:
   m_ObjectHideFlags: 0
