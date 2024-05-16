@@ -1,1 +1,1 @@
-{"PlayerName":"Guest","SelectedCharacterIndex":"witch","PlayerLVL":1,"NewGame":false,"InventoryItems":[],"MapData":{"MapModel":["*","#","#","$","#","@"],"MapSeed":[0,2,1,0,2,0],"BiomeIndex":"testbiome","CurrentGameLvlIndex":0}}
+{"PlayerName":"Guest","SelectedCharacterIndex":"startablecharacter","PlayerLVL":1,"NewGame":false,"InventoryItems":[],"MapData":{"MapModel":["*","$","#","#","#","@"],"MapSeed":[0,0,2,1,0,0],"BiomeIndex":"testbiome","CurrentGameLvlIndex":0}}

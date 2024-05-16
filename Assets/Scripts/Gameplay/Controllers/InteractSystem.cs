@@ -42,8 +42,6 @@ public class InteractSystem : MonoBehaviour
             {
                 interactable.Interact(gameObject);
             }
-
-            Debug.Log(colliders[0].gameObject.name);
         }
     }
 

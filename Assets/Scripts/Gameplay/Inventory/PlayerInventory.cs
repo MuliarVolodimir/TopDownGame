@@ -61,6 +61,5 @@ public class PlayerInventory : MonoBehaviour
         _currentSlot = slotindex;
 
         OnInventoryAction?.Invoke(_inventory.GetItem(_currentSlot));
-        Debug.Log(_currentSlot);
     }
 }

@@ -6,6 +6,7 @@ public class PickUpable : MonoBehaviour, IInteractable
     [SerializeField] ItemSO _item;
     [SerializeField] TextMeshPro _infoText;
     [SerializeField] Transform _itemSpawnPos;
+
     private Camera _camMain;
 
     public void SetItem(ItemSO item)
@@ -30,8 +31,6 @@ public class PickUpable : MonoBehaviour, IInteractable
     {
         PlayerInventory inventory = interacter.GetComponent<PlayerInventory>();
         inventory.AddItem(_item);
-
-        Debug.Log(interacter.name + "interact with " + _item.Name);
         Destroy(gameObject);
     }
 

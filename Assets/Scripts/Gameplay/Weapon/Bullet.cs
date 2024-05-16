@@ -3,7 +3,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _lifeTime;
-
     [SerializeField] private LayerMask _collisionMask;
 
     private Vector3 _direction;
@@ -35,7 +34,6 @@ public class Bullet : MonoBehaviour
             {
                 character.TakeDamage(_damage);
             }
-            Debug.Log(hit.transform.name);
             Destroy(gameObject);
             return;
         }
